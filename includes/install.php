@@ -142,6 +142,12 @@
 	}
 	
 	$_POST['siteurl'] = str_replace("/includes/install.php","","http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+	
+	$pos = strpos($_SERVER['HTTP_USER_AGENT'],"Webkit");
+	if(!$pos)
+	{
+		$csshacks = ' <script type="text/javascript" src="js/placeholder.js"></script> ';
+	}
 
 ?>
 <!DOCTYPE html>
@@ -152,6 +158,7 @@
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery.rotate.js"></script>
 		<script type="text/javascript" src="js/content.js"></script>
+		<?=$csshacks?>
 	</head>
 	<body>
 	<div id="loginbox" class="install">
