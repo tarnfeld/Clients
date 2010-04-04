@@ -1,9 +1,9 @@
 **Clients**
-A really simple client, project and hours tracking system for people who don't want over the top applications to do it for them.
+A really simple client, project and hours tracking system for people who don't want over the top applications to do it for them. Currently I am only working on it in Firefox and Safari (Chrome will be fine) because I don't see its worth cutting back on nice features for stupid IE. Sorry.
 
 **Install...**
 Fire up your web browser to the page ~/includes/install.php and follow the instructions. You should be redirected there from other pages if you aren't installed yet but to stop any errors just go there. Make sure the ~/includes/db.php file is CHMOD to 777 and then you should be ok to install.
 
 If you have any issues send me an email to tarnfeld@me.com :)
 
-Version: 1.0
+Version: 1.0.1

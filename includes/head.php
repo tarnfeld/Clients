@@ -23,7 +23,25 @@
 	{
 		header("Location: index.php");
 	}
-
+	
+	$pos = strpos($_SERVER['HTTP_USER_AGENT'],"Gecko");
+	if($pos)
+	{
+		$csshacks = '
+					<style>
+						#wrap ul.list li {
+							background: -moz-linear-gradient(top, #f2f2f2, #e2e2e2)!important;
+						}
+					</style>
+					';
+	}
+	
+	$pos = strpos($_SERVER['HTTP_USER_AGENT'],"Webkit");
+	if(!$pos)
+	{
+		$csshacks = ' <script type="text/javascript" src="'.$_CONFIG['siteurl'].'/includes/js/placeholder.js"></script> ';
+	}
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,5 +51,6 @@
 		<script type="text/javascript" src="<?=$_CONFIG['siteurl']?>/includes/js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="<?=$_CONFIG['siteurl']?>/includes/js/jquery.rotate.js"></script>
 		<script type="text/javascript" src="<?=$_CONFIG['siteurl']?>/includes/js/content.js"></script>
+		<?=$csshacks?>
 	</head>
 	<body>
