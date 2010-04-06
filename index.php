@@ -39,10 +39,23 @@
 			if(mysql_num_rows($data)>0):
 		?>
 		<h2>Your Clients <a href="clients/new.php"><p id="addButton"></p></a><a href="#" id="showEdits"><p id="minusButton"></p></a></h2>
-			<ul class="list clients">
+			<ul class="list projects clients">
 				<? while($row = mysql_fetch_assoc($data)): ?>
 					<li>
 						<h2><a href="clients/projects.php?id=<?=$row['id']?>"><?=$row['clientname']?></a></h2>
+						<div class="hours">
+							<?
+								$sql = "SELECT * FROM `clocks` WHERE `clientid`='$row[id]'";
+								$num = 0;
+								$results = mysql_query($sql,$mysql);
+								while($hours = mysql_fetch_assoc($results))
+								{
+									$num = $num + $hours['hours'];
+								}
+								echo($num);
+							?>
+							&nbsp;Hours
+						</div>
 						<p class="actions">
 							<a href="clients/edit.php?id=<?=$row['id']?>">Edit</a>
 						</p>

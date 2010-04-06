@@ -221,7 +221,7 @@ hr {
 }
 #wrap ul.list.projects li h2 {
   float: left;
-  width: 550px;
+  width: 500px;
   white-space: nowrap;
   overflow-x: hidden;
   overflow-y: visible;
@@ -240,7 +240,7 @@ hr {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   padding: 3px 10px;
-  margin: 0;
+  margin: 0 0 0 10px;
   font-size: 10px;
   text-align: center;
   float: right;
