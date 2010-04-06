@@ -39,7 +39,7 @@
 	$pos = strpos($_SERVER['HTTP_USER_AGENT'],"Webkit");
 	if(!$pos)
 	{
-		$csshacks = ' <script type="text/javascript" src="'.$_CONFIG['siteurl'].'/includes/js/placeholder.js"></script> ';
+		$csshacks .= ' <script type="text/javascript" src="'.$_CONFIG['siteurl'].'/includes/js/placeholder.js"></script> ';
 	}
 	
 ?>
