@@ -3,8 +3,11 @@ $(document).ready(function(){
 	$.each($('input[type=text], input[type=password]'), function(index, value) {
 			
 		var placeholder = $(value).attr("placeholder");
-		$(value).css({'color':'#acacac'});
-		$(value).val(placeholder);
+		if($(value).val()!=='')
+		{
+			$(value).css({'color':'#acacac'});
+			$(value).val(placeholder);
+		}
 		
 		$(value).focus(function()
 		{
